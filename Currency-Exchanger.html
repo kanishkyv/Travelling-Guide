@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+.a
+{
+	color:blue;
+	font-size:50px;
+	font-family:Comic Sans MS;
+	
+
+}
+.b
+{
+	background-image:url("purple.png"); 
+}
+.c
+{
+	color:black;
+	font-size:30px;
+	text-shadow:1px 1px 1px;
+	font-family: Comic Sans MS;
+}
+.d
+{
+
+}
+</style>
+
+<script>
+
+$(document).ready(function(){
+$("#btn1").click(function(){
+var amt=$("#amount").val();
+var temp=$("#country").val();
+var cont=temp.toUpperCase();
+$.ajax({
+url: 'https://api.exchangerate-api.com/v4/latest/INR',
+success: function (data) {
+
+for(item in data.rates){
+if(item==cont){
+var total=data.rates[item]*amt;
+content2=amt+" INR to "+item+" is "+total+"<br>";}
+}
+$("#mydiv2").append(content2);
+}
+});
+});
+
+
+$.ajax({
+url: 'https://api.exchangerate-api.com/v4/latest/INR',
+success: function (data) {
+$("#mydiv").html("");
+
+for(item in data.rates){
+content+=item+data.rates[item];
+}
+$("#mydiv").append(content);
+}
+})
+});
+</script>
+</head>
+<body class="b">
+<div class="container">
+<nav class="nav1" style="background: green">
+ 			
+ 			<div class="col-md-3">
+ 				<div class="logo">
+ 					Travel Guide
+ 				</div>
+ 			</div>
+ 			<div class="col-md-2 btn2">
+				<a href="Home.html" class="btn2"><button class="BTN1">Home</button></a>
+ 			</div>
+ 			
+ 			<div class="col-md-2 btn2">
+ 				<a href="Weather.html" class="btn2"><button class="BTN1">Weather</button></a>
+				</div>
+				
+				<div class="col-md-2 btn2">
+ 				<a href="Translator.html" class="btn2"><button class="BTN1">Translator</button></a>
+				</div>
+				
+				<div class="col-md-3 btn2" style="padding-bottom: 0px;">
+ 				<a href="Currency-Exchanger.html" class="btn2"><button class="BTN1">Currency Exch..</button></a>
+				</div>
+ 				
+ 				<!--
+ 				<div class="dropdown">
+ 				
+ 				<button class="BTN1 dropbtn" onClick="myfunction1()">Tools</button>
+ 				<div class="dropdown-content">
+ 					<a href="Weather.html" style="height: 50px;">Weather</a>
+    				<a href="Currency-Exchanger.html">Currency Exchanger</a>
+    				<a href="Translator.html">Translator</a>
+ 				</div>
+ 				</div>
+ 				<script>
+					function myFunction() {
+						document.getElementById("myDropdown").classList.toggle("show");
+					}
+
+
+					window.onclick = function(event) {
+						if (!event.target.matches('.dropbtn')) {
+    				var dropdowns = document.getElementsByClassName("dropdown-content");
+    				var i;
+    				for (i = 0; i < dropdowns.length; i++) {
+						var openDropdown = dropdowns[i];
+						if (openDropdown.classList.contains('show')) {
+							openDropdown.classList.remove('show');
+      				}
+    			}
+  			}
+					}
+				</script>
+ 				-->
+ 		
+ 			
+ 			</nav>
+<center><span><p class="a"><u>INR Currency-Exchanger</u></p></span></center>
+<center><span><h4><input type="text" id="amount" placeholder="Enter amount">&nbsp
+<input type="text" id="country" placeholder="Enter country code" class="d"></span></center>
+<center><span><p><button id="btn1">Exchange Currency</button></p></span></center>
+<br>
+<div id="mydiv2" align="center" class="c"></div>
+<div id="mydiv" align="center"></div></div>
+<img src="currency-converter.png" height="100%" width="100%"></img>
+<div class="col-md-12" style="background: #252424">
+    <p style="color: white; text-align: center">All rights reserved <br />
+      <br />
+      <br />
+      Made By :<br/>
+      &nbsp; Kartik Sharma<br/>
+      &nbsp; Vaibhav Verma<br/>
+      &nbsp; Kanishk Yadav<br/>
+      &nbsp; Bhavesh<br/>
+      
+  </div>
+</body>
+</html>

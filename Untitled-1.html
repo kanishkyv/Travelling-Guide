@@ -1,0 +1,249 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="Css/Untitled-2.css" rel="stylesheet" type="text/css"/>
+<link href="Css/bootstrap.min.css" rel="stylesheet"/>
+<link href="Css/bootstrap-theme.min.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+<script src="js/Jq.js"></script>
+<title>Home</title>
+</head>
+<body>
+	<div class="container-fluid back">
+
+
+ 	<header>
+ 		<div class="row">
+ 			<div class="col-md-12" style="margin: 0px; padding: 0px;" align="center">
+ 			
+ 			<div class="col-md-3">
+ 				<div class="logo">
+ 					Travel Guide
+ 				</div>
+ 			</div>
+ 			<div class="col-md-2">
+ 				<button class="BTN1">Home</button>
+ 			</div>
+ 			<div class="col-md-2">
+ 				<button class="BTN1">Tools</button>
+ 			</div>
+ 			<div class="col-md-3">
+ 				<button class="BTN1">Places & Events</button>
+ 			</div>
+ 			<div class="col-md-2">
+ 				<button class="BTN1">Contact</button>
+ 			</div>
+ 			
+ 				<video autoplay muted loop id="myvid" width="100%">
+ 					<source src="videos/video.mp4" type="video/mp4">
+ 				</video>
+ 				<div class="content">
+ 				<div id="cc"></div>
+ 					<script>
+					$(document).ready(function(){	
+		
+						
+						$.ajax({
+							method : "GET",
+							crossDomain: true,
+							url : "https://api.quotable.io/random",
+							dataType : "JSON",
+							async : true,
+							success : function(data){
+								var values = "";
+				
+								var a = JSON.stringify(data);
+			
+			
+								values += "<p style='font-size : 30px;' class= 'p1'><spam style='color: white'>" 
+									+data.content +"</spam> <sub class='align'> - " + data.author +" </sup> </p> <br/>";
+			
+							$("#cc").html(values);
+			
+							},
+		
+						});
+						
+					});
+						
+					</script>
+					
+					
+					
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</header>
+  	
+
+
+	<div class="row">
+  		<div class="col-md-12 begin">
+    		<font style="font-size: 25px;">About Us</font>
+    		<!--<p class="begin1">A Furniture in <b><u>Lea</u>gue of its own !</b></p> -->
+    		<p></p>
+    		<br/>
+    	
+  		</div>
+	</div>
+	
+<div class=" row cry">
+  <div class="container">
+    <div class="row">
+      <p class="yo">Our <b>Services</b></p>
+      <div class=" col-md-4 split1">
+        <div class="cat1"> <a href="New folder/Untitled-1.html"><img src="Css/blurb-1.png"/></a></div>
+        <div class="cat2"><a class="linking" href="New folder/Untitled-1.html">
+          <h4>Tables</h4>
+          </a><br/>
+          <span class="grey">Manufacturing craft tables for as long as we do means working with miscellaneous visual styles and types of materials…</span></div>
+      </div>
+      <div class="col-md-4 spit2">
+        <div class="bat1"><a href="New folder (2)/100.html"><img src="Css/drip.png"/></a></div>
+        <div class="bat2"><a class="linking" href="New folder (2)/100.html">
+          <h4>Chair</h4>
+          </a><br/>
+          <span class="grey">Among all other furniture items that we manufacture, the chairs probably showcase the biggest variety of styles!</span></div>
+      </div>
+      <div class="col-md-4 split3">
+        <div class="rat1"><a href="New folder (5)/Untitled-1.html"><img src="Css/blurb-3.png"/></a></div>
+        <div class="rat2"><a href="New folder (5)/Untitled-1.html" class="linking">
+          <h4>Bedroom & Furniture</h4>
+          </a><br/>
+          <span class="grey">With bedroom being one of the most important lifestyle places in your house, equipping it with some quality furniture…</span></div>
+      </div>
+      <div class="col-md-4 split4">
+        <div class="hot1"><a href="New folder (3)/Untitled-1.html"><img src="Css/blurb-6.png"/></a></div>
+        <div class="hot2"><a class="linking" href="New folder (3)/Untitled-1.html">
+          <h4>Kitchen Furniture</h4>
+          </a><br/>
+          <span class="grey">The kitchen is by far one of the most essential places for your lifestyle. This is why having it equipped with some…</span></div>
+      </div>
+      <div class="col-md-4 split5">
+        <div class="cool1"><a href="New folder (4)/Untitled-3.html"><img src="Css/blurb-5.png"/></a></div>
+        <div class="cool2">
+          <h4><a href="New folder (4)/Untitled-3.html" class="linking">Office Furniture</a></h4>
+          <br/>
+          <span class="grey">Every single office, with either 2 or 222 employees working there needs a set of essential furniture items.</span></div>
+      </div>
+      <div class="col-md-4 split6">
+        <div class="walker1"><a href="New folder (6)/Untitled-3.html"><img src="Css/blurb-4.png"/></a></div>
+        <div class="walker2">
+          <h4><a href="New folder (6)/Untitled-3.html" class="linking">Houseware Furniture</a></h4>
+          <br/>
+          <span class="grey">Just as it goes for major and small home appliances, the home furniture is either a big one like a dining table or a small one…</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row snow">
+  <div class="col-md-3"><div class="keep1"></div>
+    </div>
+      <div class="col-md-9">
+      <p class="keep2">As we moved into our new house in North Carolina, we were extremely eager to make sure that the interior of it matches our tastes. This meant, on par with doing some remodeling and renovation works, purchasing a new furniture. So firstly we tried to secure ourselves a new master bed and all of the bedroom furniture, including the wardrobe closet.</p>
+      <br/>
+      <h3 class="keep2">- Jen Hudson</h3></div></div>
+    
+ 
+
+<div class="row">
+  <div class="col-md-12 winter">
+    <h4>arranged into collections & categories</h4>
+    <p class="begin1">Browse Through <b>Our Furniture Items Gallery!</b></p>
+  </div>
+  <div class="container">
+    <div class="col-md-3 any1"></div>
+    <div class="col-md-3 any2"></div>
+    <div class="col-md-3 any3"></div>
+    <div class="col-md-3 any4"></div>
+    <div class="col-md-3 any5"></div>
+    <div class="col-md-3 any6"></div>
+    <div class="col-md-3 any7"></div>
+    <div class="col-md-3 any8"></div>
+    <div class="col-md-3 any9"></div>
+    <div class="col-md-3 any10"></div>
+    <div class="col-md-3 any11"></div>
+    <div class="col-md-3 any12"></div>
+  </div>
+</div>
+<div class="row">
+  <p class="begin1">Our <b>Blog</b></p>
+  <div class="col-md-4"><a href="Links/1/Untitled-2.html" class="linkb">
+    <div class="leaf"></div>
+    </a>
+    <div class="leaf1">
+      <h3><a href="Links/1/Untitled-2.html" class="linkb">Why Handcrafted Furniture Lasts Longer</a></h3>
+      <p>Well, if you ask me it’s not just about the quality of either the materials used in manufacturing or the…</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="dead"></div>
+    <div class="dead1">
+      <h3>Decorating 101: How to Shop for Furniture</h3>
+      <p>I suppose that it is important for me to clarify that the topic for this story revolves solely around choosing…</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="team"></div>
+    <div class="team1">
+      <h3>Arranging the Furniture at Your Home</h3>
+      <p>Well, all I can say on the matter is that the composition and the arrangement and pairing of one furniture…</p>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="hexa">SEE ALL</div>
+  </div>
+</div>
+<div class="row">
+  <div class=" col-md-12 oil">
+    <div class="col-md-12 yet">
+      <p class="begin1">Contact <b>Me</b></p>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>
+            <p class="dot">Our company is comprised of a dedicated team of professional woodworkers, carpenters, designers and furniture manufacturers with one goal in mind – to craft functional and visually flawless furniture pieces that can meet the needs of any whimsical customers.</p>
+          </h4>
+          <p class="dot">Be it a kitchen furniture, bedroom furniture or just some garden accessories, be sure of the highest quality cobined with the latest trends, fashion, and style. We are commited to exceeding your expectations!</p>
+          <br/>
+          <br/>
+          <h3>
+            <p class="dot">TEL:<span class="road">+123456789</span></p>
+          </h3>
+          <h3>
+            <p class="dot">FAX:<span class="road">+123456789</span></p>
+          </h3>
+          <div class="disc"></div>
+          <div class="disc1"></div>
+          <div class="disc2"></div>
+        </div>
+        <div class="col-md-6">
+          <input type="text"  class="dragon" name="name" placeholder="Name" >
+          <br/>
+          <br/>
+          <input type="email" name="E-mail" class="dragon" placeholder="E-mail">
+          <br/>
+          <br/>
+          <input type="tel" name="Phone" class="dragon" placeholder="Phone">
+          <br/>
+          <br/>
+          <input type="text" name="Message" class=" dragonm dragon" placeholder="Message">
+          <br>
+          <br>
+          <div class="hexa1">SEND</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 ends">
+    <p>All Rights Reserved <br />
+      <br />
+      <br />
+      by MR.Kartik</p>
+  </div>
+</div>
+</body>
+</html>

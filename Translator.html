@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+<link href="Css/Untitled-2.css" rel="stylesheet" type="text/css"/>
+<link href="Css/bootstrap.min.css" rel="stylesheet"/>
+<link href="Css/bootstrap-theme.min.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<title>Text Translator</title>
+</head>
+
+<script>
+
+			$(document).ready(function(){
+				$("button#do").click(function(){
+					
+					//var a = document.getElementById(text).val();
+					var a = $("#text").val();
+					var con = $("#langs").val();
+					
+					
+					
+						$.ajax({
+						async : true,
+							crossDomain: true,
+						url: "https://nlp-translation.p.rapidapi.com/v1/translate",
+						//URL : "https://api.quotable.io/random",
+						method: 'post',
+						headers: {
+									"x-rapidapi-host": "nlp-translation.p.rapidapi.com",
+									"x-rapidapi-key": "91e485493cmshb8a4a2a2b50810bp1040dfjsnf8a58673f074",
+									"content-type": "application/x-www-form-urlencoded"
+							},
+						data: {
+								"from": "en",
+								"text": a,
+								"to": con
+							},
+						
+						success: function( data, textStatus, jQxhr ){
+							//alert(a);
+		   					var a = JSON.stringify( data );
+							$("#text1").val(JSON.stringify(data.translated_text));
+							//alert(JSON.stringify(data.translated_text));
+						},
+						
+						error: function( jqXhr, textStatus, errorThrown ){
+							console.log( errorThrown );
+						},
+
+							
+					//alert(encodeURIComponent("http://countryapi.gear.host/v1/Country/getCountries?pName=Costa Rica"));
+					
+						/*
+						var settings = {
+							async : true,
+							crossDomain: true,
+							url: "https://nlp-translation.p.rapidapi.com/v1/translate",
+							method: "POST",
+							headers: {
+									"x-rapidapi-host": "nlp-translation.p.rapidapi.com",
+									"x-rapidapi-key": "91e485493cmshb8a4a2a2b50810bp1040dfjsnf8a58673f074",
+									"content-type": "application/x-www-form-urlencoded"
+							},
+							data: {
+								"from": "en",
+								"text": "Hello World",
+								"to": "es"
+							},
+
+						},
+
+
+						$.ajax(settings).done(function (response) {
+							console.log(response);
+							});
+
+					*/
+					}); 
+				});
+
+			});
+
+			</script>
+
+<body style="font-family: century gothic">
+	<div class="row">
+		<nav class="nav1">
+ 			
+ 			<div class="col-md-3">
+ 				<div class="logo">
+ 					Travel Guide
+ 				</div>
+ 			</div>
+ 			<div class="col-md-2 btn2">
+				<a href="Home.html" class="btn2"><button class="BTN1">Home</button></a>
+ 			</div>
+ 			
+ 			<div class="col-md-2 btn2">
+ 				<a href="Weather.html" class="btn2"><button class="BTN1">Weather</button></a>
+				</div>
+				
+				<div class="col-md-2 btn2">
+ 				<a href="Translator.html" class="btn2"><button class="BTN1">Translator</button></a>
+				</div>
+				
+				<div class="col-md-3 btn2" style="padding-bottom: 0px;">
+ 				<a href="Currency-Exchanger.html" class="btn2"><button class="BTN1">Currency Exch..</button></a>
+				</div>
+ 				
+ 				<!--
+ 				<div class="dropdown">
+ 				
+ 				<button class="BTN1 dropbtn" onClick="myfunction1()">Tools</button>
+ 				<div class="dropdown-content">
+ 					<a href="Weather.html" style="height: 50px;">Weather</a>
+    				<a href="Currency-Exchanger.html">Currency Exchanger</a>
+    				<a href="Translator.html">Translator</a>
+ 				</div>
+ 				</div>
+ 				<script>
+					function myFunction() {
+						document.getElementById("myDropdown").classList.toggle("show");
+					}
+
+
+					window.onclick = function(event) {
+						if (!event.target.matches('.dropbtn')) {
+    				var dropdowns = document.getElementsByClassName("dropdown-content");
+    				var i;
+    				for (i = 0; i < dropdowns.length; i++) {
+						var openDropdown = dropdowns[i];
+						if (openDropdown.classList.contains('show')) {
+							openDropdown.classList.remove('show');
+      				}
+    			}
+  			}
+					}
+				</script>
+ 				-->
+ 		
+ 			
+ 			</nav>
+ 		</div>
+ 		<div class="col-md-12 back2" style="padding-top: 100px;">
+ 			<center><font style="font-size: 70px; color: white; font-family: century gothic;">Text Translator </font></center>
+ 		</div>
+ 		
+ 		 <div class="row">
+               <div class="col-md-10 text12" style="margin-left: 50px;" >
+				   <font size="30px;">Enter the Text you want to translate :</font><br/>
+                  	<input id="text" placeholder="  Enter text to translate" size="100" style="height: 50px; font-size: 20px;" > <br/><br/>
+                <h3>Translate to</h3>
+                	<select id="langs" style="width: 40%; height: 50px; font-size: 25px;">
+                		<option value="ar">Arabic (هتاف للترحيب)</option>
+                		<option value="bn">Bengali (ওহে)</option>
+                		<option value="ca">Catalan (holas)</option>
+                		<option value="de">German (Hallo)</option>
+                		<option value="hi">Hindi (हेलो) </option>
+                		<option value="it">Italian (Pronto!)</option>
+                		<option value="ja">Japanese (今日は)</option>
+                		<option value="ko">Korian (9어이!)</option>
+                		<option value="ru">Russian (здороваться)</option>
+                		<option value="es">Spanish (Hola)</option>
+                		
+                	</select><br/><br/>
+				<button id="do">Translate</button>
+				<br/><br/>
+				<input type="text" id="text1" style="height: 50px; font-size: 20px;" placeholder="Translated Text" size="100"> 
+			
+			<div class="dodo">
+
+			</div>
+                </div>
+             
+            </div>
+            
+ 		<div class="col-md-12" style="background: #252424">
+    
+      <br />
+      <br />
+      Made By :<br/>
+      &nbsp; Kartik Sharma<br/>
+      &nbsp; Vaibhav Verma<br/>
+      &nbsp; Kanishk Yadav<br/>
+  </div>
+ 		
+ 		
+
+</body>
+</html>

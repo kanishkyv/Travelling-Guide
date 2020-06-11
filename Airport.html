@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<link href="Css/Untitled-2.css" rel="stylesheet" type="text/css"/>
+	<link href="Css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="Css/bootstrap-theme.min.css" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/Jq.js" ></script>
+</head>
+<title>Airport Finder</title>
+
+<script>
+	$(document).ready(function(){
+		$("button").click(function(){
+			var valuesa = $("#searchs").val();
+			alert(valuesa);
+			$.ajax({
+				method : "GET",
+				crossDomain: true,
+				url : "https://restcountries.eu/rest/v2/name/"+valuesa, 
+				dataType : "JSON",
+				async : true,
+				success : function(data){
+					for(index in data){
+						
+					}
+					
+				alert(JSON.stringify(data[0].flag));
+					$(".img9").html("<img src='" + data[0].flag +"'width='100%' height='100px' >");
+					$(".cnt").html(data[0].name);
+					$(".cnt2").html(data[0].capital);
+					$(".cnt3").html(data[0].subregion);
+					$(".cnt4").html(data[0].currencies[0].name +"(" + data[0].currencies[0].symbol +")" );
+			},
+		
+			});
+		});
+	});
+
+			
+	</script>
+
+<body><div class="container-fluid">
+	<div class="row" style="margin: auto">
+		<div class="col-md-12" style="text-align: center">
+			<font size="30px;">Countries</font><br/>
+			<input type="text" id="searchs" size="40" style="height: 40px; font-size: 30px;">
+			<button style="border: 2px #84CBE1 solid;width: 9%;height: 40px;background: none;font-size: 20px; padding-top: 7px;" >Search</button>
+		</div>
+		<div class="col-md-6 box" align="center">
+		<div class="img9">
+			
+		</div>
+			Countries : <font class="cnt"></font><br/>
+				Capital : <font class="cnt2"></font><br/>
+				Region : <font class="cnt3"></font><br/>
+				Currency : <font class="cnt4"></font><br/>
+		</div>
+	</div>
+	
+	
+</div></body>
+</html>

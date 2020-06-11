@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ 	
+ 	 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ 	 <link rel="stylesheet" href="https:/resources/demos/style.css">
+ 	<link href="Css/Untitled-2.css" rel="stylesheet" type="text/css"/>
+<link href="Css/bootstrap.min.css" rel="stylesheet"/>
+<link href="Css/bootstrap-theme.min.css" rel="stylesheet"/>
+ 	 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ 	 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<title>Weather</title>
+</head>
+<script>
+    function validateForm() {
+ 			var x = document.forms["myForm"]["fname"].value;
+			if (x == "") {
+				alert("Name must be filled out");
+    			return false;
+  			}
+			var letters = /^[A-Za-z]+$/;
+			if(x.match(letters))
+			{
+				return true;
+			}
+			else
+			{
+				alert("numbers not allowed");
+				return false;
+			}
+   }
+	$(document).ready(function(){
+		var arr=[];
+
+		$.get("https://indian-cities-api-nocbegfhqg.now.sh/cities" , function(data, status){
+			for(x in data)
+			{
+
+				arr.push(data[x].City);
+			}
+		});
+ 
+      	$( "#tags" ).autocomplete({
+      		source: arr
+    	});
+		$("#22").click(function(){
+			$("#main").show();
+		});
+
+     
+
+
+		var input = document.getElementById("tags");
+		input.addEventListener("keyup", function(event) {
+		  if (event.keyCode === 32) {
+		   event.preventDefault();
+		   document.getElementById("22").click();
+		  }
+		});
+		var x="";
+		 $("button").on("click",function(){
+			x=document.getElementById("tags").value;
+
+		var settings = {
+		  "async": true,
+		  "crossDomain": true,
+		  "url": "https://api.weatherbit.io/v2.0/current?city="+x+",IN&key=c0099ecb2d9a4e15abc24f1a4b07177f",
+		  "method": "GET",
+		  "headers": {
+		  }
+		}
+
+		$.ajax(settings).done(function (response) {
+
+
+		   var city=response.data[0].city_name;
+
+					var temp=response.data[0].app_temp;
+					var desc=response.data[0].weather.description;
+					$("#city").html(city);
+					$("#temp1").html(temp);
+					$("#desc").html(desc);
+
+
+ 
+		});
+		 });
+	});
+
+
+
+
+
+
+  </script>
+  
+   <style>
+#main{
+    background-image: url("green.jpg");
+ 
+ 
+  height: 100%;
+
+ 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 100px;
+  height: 82vh;
+  width:70vh;
+  border: 9px double rgb(0,0,14);
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 20% 80%;
+  padding: 25px 5px;
+  opacity:0.8;
+  border-radius: 110%;
+}
+h2 {
+  font-size: 6rem;
+}
+h1{
+  font-size:15rem;
+  color:white;
+}
+#city{
+ 
+  opacity:1;
+  color:red;
+  font-family: optima;
+   text-transform: uppercase;
+    text-decoration: underline;
+}
+body {
+  background-image: url('world3.jpg');
+  background-repeat: no-repeat;
+   background-size: 1550px 750px;
+   opacity:0.9;
+}
+
+img {
+  width: 80px;
+ 
+}
+.temp{
+  color:red;
+}
+span {
+  font-size: 4rem;
+  font-weight: 200;
+}
+h3{
+  font-size:5rem;
+  color:white;
+}
+p{
+  color:white;
+}
+#22{
+   background-color: black;
+  border: 2px solid green;
+ 
+  color: white;
+  font-size: 14px;
+  margin-left: -20px;
+}
+#temp1{
+  font-family: optima;
+  text-shadow: 10px 12px black;
+}
+input{
+  border:2px solid black;
+  font-family: optima;
+  text-transform: uppercase;
+font-weight:bold;
+  }
+#desc{
+  font-family: optima;
+  text-shadow: 3px 3px rgb(50,0,0);
+}
+#uy{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+ 
+  background-color: rgb(79,79,79);
+  text-align: center;
+font-color:black;
+}
+#new{
+      background-image: url("green.jpg");
+      opacity:0.8;
+ border:2px solid rgb(41,41,41);
+   
+  color: white;
+  font-size: 14px;
+  text-align: right;
+}
+</style>
+  
+  
+  
+  
+  
+  
+  
+	
+<body>
+<nav class="nav1">
+ 			
+ 			<div class="col-md-3">
+ 				<div class="logo">
+ 					Travel Guide
+ 				</div>
+ 			</div>
+ 			<div class="col-md-2 btn2">
+				<a href="Home.html" class="btn2"><button class="BTN1">Home</button></a>
+ 			</div>
+ 			
+ 			<div class="col-md-2 btn2">
+ 				<a href="Weather.html" class="btn2"><button class="BTN1">Weather</button></a>
+				</div>
+				
+				<div class="col-md-2 btn2">
+ 				<a href="Translator.html" class="btn2"><button class="BTN1">Translator</button></a>
+				</div>
+				
+				<div class="col-md-3 btn2" style="padding-bottom: 0px;">
+ 				<a href="Currency-Exchanger.html" class="btn2"><button class="BTN1">Currency Exch..</button></a>
+				</div>
+ 				
+ 				<!--
+ 				<div class="dropdown">
+ 				
+ 				<button class="BTN1 dropbtn" onClick="myfunction1()">Tools</button>
+ 				<div class="dropdown-content">
+ 					<a href="Weather.html" style="height: 50px;">Weather</a>
+    				<a href="Currency-Exchanger.html">Currency Exchanger</a>
+    				<a href="Translator.html">Translator</a>
+ 				</div>
+ 				</div>
+ 				<script>
+					function myFunction() {
+						document.getElementById("myDropdown").classList.toggle("show");
+					}
+
+
+					window.onclick = function(event) {
+						if (!event.target.matches('.dropbtn')) {
+    				var dropdowns = document.getElementsByClassName("dropdown-content");
+    				var i;
+    				for (i = 0; i < dropdowns.length; i++) {
+						var openDropdown = dropdowns[i];
+						if (openDropdown.classList.contains('show')) {
+							openDropdown.classList.remove('show');
+      				}
+    			}
+  			}
+					}
+				</script>
+ 				-->
+ 		
+ 			
+ 			</nav>
+<center>
+<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+  <label for="tags"> </label>
+  <input type="text" size="10" name="fname" id="tags">
+  <input  id="new" type="submit" value="">
+
+
+</form>
+
+<button id="22" class="btn2" style="color: green; border: none; margin-left: -25px;">FORECAST</button></center>
+ 
+  <div id="main" style="display:none;">
+   
+<div id="1" >
+   
+<h2 id="city"></h2>
+<div class="middle">
+    <img src="weather4.jpg" height="50px" width="50px" alt="icon" id="icon">
+    <div class="degrees">
+      <h1 id="temp"><h1 id="temp1">  </h1></h1>
+      <span>&#176;</span>
+    </div>
+    <h3 id="desc"></h3>
+
+
+</div>
+    </div></div>
+<div style="display:inline;">
+   
+
+ </div>
+</body>
+</html>

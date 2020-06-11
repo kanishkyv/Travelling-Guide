@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<link href="Css/Untitled-2.css" rel="stylesheet" type="text/css"/>
+<link href="Css/bootstrap.min.css" rel="stylesheet"/>
+<link href="Css/bootstrap-theme.min.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ 
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https:/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="js/Jq.js"></script>
+<title>Home</title>
+</head>
+
+<style>
+
+      #div{
+        width:70vh;
+       
+
+        font-size: 18px;
+        word-wrap: break-word;
+        color:red;
+		height:50vh;
+      }
+      span{
+        color:green;
+      }
+      pre{
+        color:black;
+        font-size: 16px;
+        word-wrap:  break-word;
+        overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      }
+      
+      h4{
+
+        color: white;
+        margin-top: 1px;
+      }
+
+</style>
+
+
+
+
+
+<script>
+		$(document).ready(function(){	
+		
+		$("button.abc").click(function(){
+			$.ajax({
+			method : "GET",
+			crossDomain: true,
+			url : "https://api.quotable.io/random",
+			dataType : "JSON",
+			async : true,
+			success : function(data){
+				var values = "";
+				
+				var a = JSON.stringify(data);
+			
+			
+				values += "<p style='font-size : 30px;' class= 'p1'><spam style='color: white'>" +data.content +"</spam><br/><br/>&nbsp <sub class='align'> - " + data.author +" </sup> </p> <br/>";
+			
+				$("#bb").html(values);
+			
+			},
+		
+			});
+		});
+		});
+		function validateForm() {
+ 			var x = document.forms["myForm"]["fname"].value;
+			if (x == "") {
+				alert("Name must be filled out");
+    			return false;
+  			}
+			var letters = /^[A-Za-z]+$/;
+			if(x.match(letters))
+			{
+				return true;
+			}
+			else
+			{
+				alert("numbers not allowed");
+				return false;
+			}
+   		}
+						
+						
+		</script>
+
+
+
+
+
+<body>
+	<div class="container-fluid">
+
+
+ 	<header>
+ 		<div class="row">
+ 		<div class="col-md-12">
+ 			<nav class="nav1">
+ 			
+ 			<div class="col-md-3">
+ 				<div class="logo">
+ 					Travel Guide
+ 				</div>
+ 			</div>
+ 			<div class="col-md-2 btn2">
+				<a href="Home.html" class="btn2"><button class="BTN1">Home</button></a>
+ 			</div>
+ 			
+ 			<div class="col-md-2 btn2">
+ 				<a href="Weather.html" class="btn2"><button class="BTN1">Weather</button></a>
+				</div>
+				
+				<div class="col-md-2 btn2">
+ 				<a href="Translator.html" class="btn2"><button class="BTN1">Translator</button></a>
+				</div>
+				
+				<div class="col-md-3 btn2" style="padding-bottom: 0px;">
+ 				<a href="Currency-Exchanger.html" class="btn2"><button class="BTN1">Currency Exch..</button></a>
+				</div>
+ 				
+ 				<!--
+ 				<div class="dropdown">
+ 				
+ 				<button class="BTN1 dropbtn" onClick="myfunction1()">Tools</button>
+ 				<div class="dropdown-content">
+ 					<a href="Weather.html" style="height: 50px;">Weather</a>
+    				<a href="Currency-Exchanger.html">Currency Exchanger</a>
+    				<a href="Translator.html">Translator</a>
+ 				</div>
+ 				</div>
+ 				<script>
+					function myFunction() {
+						document.getElementById("myDropdown").classList.toggle("show");
+					}
+
+
+					window.onclick = function(event) {
+						if (!event.target.matches('.dropbtn')) {
+    				var dropdowns = document.getElementsByClassName("dropdown-content");
+    				var i;
+    				for (i = 0; i < dropdowns.length; i++) {
+						var openDropdown = dropdowns[i];
+						if (openDropdown.classList.contains('show')) {
+							openDropdown.classList.remove('show');
+      				}
+    			}
+  			}
+					}
+				</script>
+ 				-->
+ 		
+ 			
+ 			</nav>
+ 			</div>
+ 			
+		</div>
+		
+			<div class="row">
+ 			<div class="col-md-12"  align="center">
+ 			
+ 			
+ 			<div class="video-container">
+ 				<video autoplay muted loop width="100%">
+ 					<source src="videos/video.mp4" type="video/mp4">
+ 				</video>
+ 				<div class="overlay-desc" id="bb">
+					<center>
+					<button class="align buttons abc" style="font-size: 30px; background: none; border: none;">></button>
+	
+					<br/>
+	
+	
+					</center>
+				</div>
+ 				
+				</div>
+ 			</div>
+ 			
+ 			
+ 			
+ 		</div>
+ 	</header>
+  	
+
+
+<div class="row">
+  <div class="col-md-12 begin">
+  	<font style= "font-size: 35px;"><b>About Us</b></font>
+  	<br/><br/><br/>
+  	<div class="col-md-5">
+    <p style="font-size: 25px; text-align: center; margin-left: 80px; color: black; line-height: 30px;" >
+    	We provide Tools and Up to date knowledge  about Travelling.
+		In our website we create a portal to get information about
+		the major travelling spots in the continents.<br/>
+					
+		We create a weather portal for the user to provide information
+		about the current weather in the country.<br/>
+					
+		We created a Currency exchanger for the user which helps
+		to exchange the currency.
+					
+		We created a Text translator for the user to translate the language
+		of the country.
+   </p>
+	</div>
+    <br/>
+    
+	<div class="col-md-4" align="right" style="float: right">
+		<a href="mailto:sharmamrkartik@gmail.com"><img src="Images/email.png" style="width:30%; height: 100px; margin-right: 250px; margin-top: 80px; float: right; " ></a>
+	 </div>
+    </div>
+    
+  </div>
+
+
+
+    <div class="row" style="padding-top: 50px; padding-left: 60px; margin: auto; background: #252121; height: 500px;">
+     <div class="col-md-12" style="margin: auto">
+		<p style="font-size: 40px; text-align: center;"><a id="serv" style="color: beige;" >Our <b>Services</b></a></p>
+      
+      <div class="col-md-4 hvr2" style="margin-top: 60px;">
+       	<a href="Currency-Exchanger.html">
+        <div class="col-md-10" align="center" style="margin-bottom: 50px;"> 
+        <img class="img10" src="Images/currency1.png"/>
+        </div>
+        <div class="col-md-10" align="center">
+          <font style="font-size: 20px; color: white">Currency Exchanger</font></div>
+          </a>
+      </div>
+      
+      
+      
+      
+      
+      <div class=" col-md-4 hvr2" style="margin-top: 60px;">
+       	<a href="Weather.html">
+        <div class="col-md-10" align="center" style="margin-bottom: 50px;"> <img class="img10" src="Images/408376 (1).png"/></div>
+        <div class="col-md-10" align="center">
+          <font style="font-size: 20px; color: white">Weather</font>
+          </div>
+          </a>
+      </div>
+      
+      
+      
+     <div class=" col-md-4 hvr2" style="margin-top: 60px;">
+       	<a href="Translator.html">
+        <div class="col-md-10" align="center" style="margin-bottom: 50px;"> <img class="img10" src="Images/foreign-language-icon-4 (1).jpg"/></div>
+        <div class="col-md-10" align="center">
+          <font style="font-size: 20px; color: white">Translator</font></div>
+          </a>
+      </div>
+      
+      
+      
+     
+    </div>
+  </div>
+
+	<script>
+		$(document).ready(function(){
+
+
+			$.get("https://api.nytimes.com/svc/topstories/v2/science.json?api-key=fqyTlyacO0Sy2yQZr7ItbmTYFSAVs0mN" , function(data, status){
+
+
+				for(x=0;x<10  ;x++){
+    				y=data.results[x].title;
+					u=data.results[x].abstract;
+					i=data.results[x].multimedia[0].url;
+
+
+					$("#div").append("<img height='60px' width='60px' src='"+i+"'>"+y+"<pre> <span>&#8226</span> " +u+"</br></br>");
+
+
+
+				}
+
+			});
+ 
+   
+
+
+
+
+
+
+		});
+  </script>
+  <div class="back3">
+<div class="row">
+ <div class="col-md-12">
+ 	<center><div="div1" style="font-size: 30px; color: red; text-align: center;" >TRENDING NEWS</div>
+ </div> 
+ <center>
+ <marquee direction="down" scrollamount="15" loop="50" onmouseover="stop()" onmouseout="start()" 
+   <div id="div">
+   
+  </br>
+
+
+
+	</div></marquee></center>
+</center>
+</div>
+</div>
+  
+   
+   <div class="row" style="background:#252121 ; padding-bottom: 200px;">
+   	<div class="col-md-12">
+   		<script>
+			$(document).ready(function(){
+				$("button").click(function(){
+				$("#uu").show();
+				var valuesa = $("#searchs").val();
+
+				$.ajax({
+				method : "GET",
+				crossDomain: true,
+				url : "https://restcountries.eu/rest/v2/name/"+valuesa,
+				dataType : "JSON",
+				async : true,
+				success : function(data){
+
+
+				$(".img9").html("<img src='" + data[0].flag +"'width='300px' height='300px' >");
+				$(".gg1").html(data[0].name);
+				$(".gg2").html(data[0].capital);
+				$(".gg3").html(data[0].subregion);
+				$(".gg4").html(data[0].currencies[0].name +"(" + data[0].currencies[0].symbol +")" );
+				},
+
+			});
+				});
+			});
+			
+  </script>
+  	<h1 size="30px;" style="color: white">Countries</h1><br/>
+		<input type="text" id="searchs" size="40" style="height: 40px; font-size: 30px; margin-left: 270px;">
+		<button style="border: 2px #84CBE1 solid;width: 9%;height: 40px;background: none;font-size: 20px; padding-top: 7px; color: aqua" >Search</button>
+	
+	
+<div align="center" style="color: white">
+	<div class="img9"></div>
+	<div id="uu" style="display:none;">
+
+	Country : <font  class="gg1"></font><br/>
+	Capital : <font  class="gg2"></font><br/>
+	Region : <font  class="gg3"></font><br/>
+	Currency : <font  class="gg4"></font><br/>
+	</div>
+   	
+		</div>
+	   </div></div>
+
+</div>
+
+<div class="row">
+  <div class=" col-md-12 oil">
+    <div class="col-md-12 yet">
+      <p class="begin1">Contact <b>Us</b></p>
+    </div><br/><br/>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="disc"></div><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          <div class="disc1"></div><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			<div class="disc2"></div><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </div>
+        <div class="col-md-5 form2" align="center">
+          <input type="text"  class="dragon" name="name" placeholder="Name" >
+          <br/><br/>
+          <br/><br/>
+          <input type="email" name="E-mail" class="dragon" placeholder="E-mail">
+          <br/><br/>
+          <br/><br/>
+          <input type="tel" name="Phone" class="dragon" placeholder="Phone">
+          <br/><br/>
+          <br/><br/>
+          <input type="text" name="Message" class=" dragonm dragon" placeholder="Message">
+          <br><br/>
+          <br><br/>
+          <div>
+          <input type="submit" value="SEND" class="hexa ab2">
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12" style="background: #252424">
+    <p style="color: white; text-align: center">All rights reserved <br />
+      <br />
+      <br />
+      Made By :<br/>
+      &nbsp; Kartik Sharma<br/>
+      &nbsp; Vaibhav Verma<br/>
+      &nbsp; Kanishk Yadav<br/>
+  </div>
+</div>
+	</div>
+</body>
+</html>
